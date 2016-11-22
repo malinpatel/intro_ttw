@@ -3,28 +3,34 @@ require 'shotgun'
 
 set    :session_secret, "super_secret"
 
-get '/cat' do
-  @name_randomiser =["Amigo", "Oscar", "Viking"].sample
-  erb(:index)
+  get '/named_cat' do
+    p params
+    @name_randomiser =params[:name]
+    erb(:index)
   end
 
-get '/' do
-  "hello world"
-end
+  get '/random_cat' do
+    @name_randomiser =["Amigo", "Oscar", "Viking"].sample
+    erb(:index)
+  end
 
-get '/base' do
-  "all bout that base"
-end
+  get '/' do
+    "hello world"
+  end
 
-get '/code' do
-  "this is what my life is now.. 0011000110000001"
-end
+  get '/base' do
+    "all bout that base"
+  end
 
-get '/secret' do
-  "they're behind you..."
-end
+  get '/code' do
+    "this is what my life is now.. 0011000110000001"
+  end
+
+  get '/secret' do
+    "they're behind you..."
+  end
 
 
-get '/noob' do
-  "n00b"
-end
+  get '/noob' do
+    "n00b"
+  end
