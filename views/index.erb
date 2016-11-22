@@ -1,5 +1,11 @@
-<h1> My name is <%=@name_randomiser %></h1>
 
-<div style='border: 10px dashed red' >
-<img src='http://bit.ly/1eze8aE'>
-</div>
+  <h1> My name is <%=@name %></h1>
+  <% if @name == nil  %>
+    <form action="/named_cat">
+      <input type="text" name="name">
+      <input type="submit" value="Submit">
+    </form>
+  <% end %>
+  <div style='border: 10px dashed red' >
+    <img src='http://bit.ly/1eze8aE'>
+  </div>
