@@ -1,6 +1,21 @@
 require 'sinatra'
 require 'shotgun'
 
+set    :session_secret, "super_secret"
+
+ #  get '/cat' do
+ # <html>
+ # <body>
+ # <img src="http://bit.ly/1eze8aE">
+ # </body>
+ # </html>
+ #  end
+
+get '/cat' do
+  "<div style='border: 10px dashed red' >
+  <img src='http://bit.ly/1eze8aE'>
+  </div>"
+  end
 
 get '/' do
   "hello world"
