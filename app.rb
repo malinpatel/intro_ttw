@@ -4,6 +4,7 @@ require 'shotgun'
 set    :session_secret, "super_secret"
 
 get '/cat' do
+  @name_randomiser =["Amigo", "Oscar", "Viking"].sample
   erb(:index)
   end
 
